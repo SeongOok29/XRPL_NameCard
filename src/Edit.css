@@ -1,0 +1,161 @@
+.Edit {  /* 변경된 부분 */
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 375px;
+  height: 800px;
+  background-color: #E6E6E6;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  position:relative;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  top: 5%;
+}
+
+/* 이미 존재하는 .profile-img와 .info-input 스타일은 그대로 유지하면 됩니다. */
+
+
+.profile-img {
+  position : relative;
+  width: 100%; /* 원하는 크기로 조절하실 수 있습니다. */
+  border-radius: 15px;
+  margin: 0 0 100px 0; 
+}
+
+
+.info-input label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.info-input input {
+  height: 30px;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+
+}
+
+.bottom-sidebar {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem; /* padding을 유지하면서 */
+  width: 310px; /* .content-wrapper의 padding을 고려한 너비 */
+  height: 80px; /* 원하는 높이입니다 */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: absolute; /* 절대 위치 지정 */
+  bottom: 0.7rem; /* 아래쪽에서 1rem만큼 떨어진 위치에 배치 */
+  left: 50%; /* 중앙에 위치 */
+  transform: translateX(-50%);
+  justify-content: space-between; /* 이 부분을 space-around로 변경하세요 */
+}
+
+.nav-button1,
+.nav-button2,
+.nav-button3 {
+  background: none;
+  border: none;
+  font-size: 12px; /* 글자의 크기를 14px로 조절합니다 */
+  cursor: pointer;
+  color: #333; /* Font color */
+  transition: 0.3s;
+  padding: 0.5rem 1rem; /* Adjust padding as necessary */
+  flex: 1; /* 각 버튼이 동일한 너비를 가지도록 설정 */
+  text-align: center; /* 버튼 내부의 텍스트를 중앙 정렬 */
+  width: auto;
+  height: auto;
+  display: flex; /* Flexbox를 사용하여 요소들을 중앙 정렬합니다 */
+  flex-direction: column; /* 세로 방향 중앙 정렬 */
+  align-items: center; /* 가로 방향 중앙 정렬 */
+  justify-content: center; /* 세로 방향 중앙 정렬 */
+}
+
+.nav-button1:hover,
+.nav-button2:hover,
+.nav-button3:hover {
+  background-color: #E6E6E6; /* Change to your preferred hover color */
+  margin-bottom: 0.5rem; /* 이미지와 텍스트 사이의 간격을 조정합니다 */
+
+}
+
+.nav-button1{
+  margin-right: 15px;
+}
+.nav-button1::before {
+  content: '';   /* 빈 내용으로 가상 요소 생성 */
+  display: block;/* 블록 레벨 요소로 설정 */
+  width: 32px;   /* 이미지 너비 설정 */
+  height: 32px;  /* 이미지 높이 설정 */
+  background: url('image/home.png') no-repeat center center; /* 이미지 적용 */
+  background-size: contain; /* 이미지 크기 조절 */
+  margin-bottom: 5px; /* 이미지와 텍스트 사이의 간격 */
+}
+.nav-button1:after {
+  content: "홈";  /* 텍스트 내용 */
+}
+
+.nav-button2{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.nav-button2::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url('image/card.png') no-repeat center center;
+  background-size: contain;
+  margin-bottom: 5px;
+}
+.nav-button2:after {
+  content: "명함첩";
+}
+
+.nav-button3{
+  margin-left: 15px;
+}
+.nav-button3::before {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  background: url('image/mypage.png') no-repeat center center;
+  background-size: contain;
+  margin-bottom: 5px;
+
+}
+.nav-button3:after {
+  content: "지갑관리";
+}

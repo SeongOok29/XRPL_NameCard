@@ -1,0 +1,387 @@
+.Home {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 375px;
+  height: 800px;
+  background-color: #E6E6E6;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.settings-notification {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  position: relative;
+  transition: all 0.3s;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+
+}
+
+
+
+
+.card-image {
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-image.moved {
+  transform: translateY(150px);
+}
+
+
+.bottom-navigation {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.card-image.slide-up {
+  transform: translateY(calc(-95% + 50px));
+  transition: transform 0.5s ease-in-out;
+}
+
+.qr-image {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-hover-overlay {
+  position: absolute;
+  width: 137px;
+  height: 210px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(28, 29, 33, 0.7);
+  border-radius: 17px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index : 0;
+}
+
+.card-hover-overlay-content {
+  position: relative;
+  width: 90%;
+  height: 90%;
+}
+
+.card-hover-overlay-content .image-overlay {
+  position: absolute;
+  width: 50px;
+  height: 115px;
+  left: 53%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  background: rgba(217, 217, 217, 0.5);
+  border-radius: 1.00936px;
+}
+
+.card-hover-overlay-content .text-overlay {
+  position: absolute;
+  width: 130px;
+  height: 45px;
+  top: 85%;
+  left: 56%;
+  transform: translateX(-50%);
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.card-image:hover + .card-hover-overlay {
+  opacity: 1;
+}
+
+
+.card-hover-overlay-content .white-gray-gradient {
+  position: absolute;
+  width: 80px;
+  height: 19px;
+  left: 53%;
+  top: 42%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 98%);
+}
+
+
+.card-hover-overlay-content .hand-icon {
+  position: absolute;
+  width: 80px; 
+  height: 110px; 
+  left: 78%; /* Adjusted to center within card-hover-overlay-content */
+  top: 63%; /* Adjusted to center within card-hover-overlay-content */
+  transform: translate(-50%, -50%);
+  background-image: url("image/hand.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+   z-index: 1000;
+}
+
+.card-hover-overlay,
+.card-hover-overlay * {
+    pointer-events: none;
+}
+
+.bell-icon-wrapper img{
+  position: relative;
+  width: 24px;
+  height: 25px;
+  left: 25px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.option-icon-wrapper img{
+  position: relative;
+  width: 48px;
+  height: 43px;
+  left: 10px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.camera-button {
+  background-color: #FFFFFF;
+  border: none; /* Removes the border */
+  border-radius: 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  width: 75px; /* 버튼의 넓이를 조절합니다 */
+  height: 75px; /* 버튼의 높이를 조절합니다 */
+  top: 76%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+}
+
+/* 카메라 이미지 스타일 */
+.camera-icon {
+  position: absolute;
+  top: 55%; 
+  left: 52%;
+  width: 80px; /* 이미지의 넓이를 조절합니다 */
+  height: 80px; /* 이미지의 높이를 조절합니다 */
+  transform: translate(-50%, -50%);
+}
+
+.button-container {
+  position:absolute;
+  display: grid;
+  gap: 5px;
+  background-color: #FFFFFF;
+  padding: 5px; /* 수정됨 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 77%;
+  height: 150px; /* 수정됨: 80px + 5px + 5px */
+  top:0%;
+}
+
+.action-button {
+  align-items: center;
+  padding: 0; /* 수정됨 */
+  border: none;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.action-button:hover {
+  background-color: #E0E0E0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.file-button{
+  background-color: #f7f7f7;
+  grid-column: 1;      /* 첫 번째 열에 위치 */
+  grid-row: 1 / span 2; /* 두 행을 차지 */
+  border-top-left-radius: 10px;
+}
+
+.file-icon {
+  background-image: url('image/file.png');
+}
+
+.edit-button{
+  background-color: #e6e6e6;
+  grid-column: 2; /* 두 번째 열에 위치 */
+  grid-row: 1;    /* 첫 번째 행에 위치 */
+  border-top-right-radius: 10px;
+
+}
+
+.edit-icon {
+  background-image: url('image/edit.png');
+}
+
+.delete-button {
+  background-color: #ff7575;
+  color:#ffffff;
+  grid-column: 2; /* 두 번째 열에 위치 */
+  grid-row: 2;    /* 두 번째 행에 위치 */
+}
+
+.delete-icon {
+  background-image: url('image/trashcan.png');
+}
+
+.bottom-sidebar {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem; /* padding을 유지하면서 */
+  width: 310px; /* .content-wrapper의 padding을 고려한 너비 */
+  height: 80px; /* 원하는 높이입니다 */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: absolute; /* 절대 위치 지정 */
+  bottom: 0.7rem; /* 아래쪽에서 1rem만큼 떨어진 위치에 배치 */
+  left: 50%; /* 중앙에 위치 */
+  transform: translateX(-50%);
+  justify-content: space-between; /* 이 부분을 space-around로 변경하세요 */
+  margin-bottom: 15px;
+}
+
+.nav-button1,
+.nav-button2,
+.nav-button3 {
+  background: none;
+  border: none;
+  font-size: 12px; /* 글자의 크기를 14px로 조절합니다 */
+  cursor: pointer;
+  color: #333; /* Font color */
+  transition: 0.3s;
+  padding: 0.5rem 1rem; /* Adjust padding as necessary */
+  flex: 1; /* 각 버튼이 동일한 너비를 가지도록 설정 */
+  text-align: center; /* 버튼 내부의 텍스트를 중앙 정렬 */
+  width: auto;
+  height: auto;
+  display: flex; /* Flexbox를 사용하여 요소들을 중앙 정렬합니다 */
+  flex-direction: column; /* 세로 방향 중앙 정렬 */
+  align-items: center; /* 가로 방향 중앙 정렬 */
+  justify-content: center; /* 세로 방향 중앙 정렬 */
+}
+
+.nav-button1:hover,
+.nav-button2:hover,
+.nav-button3:hover {
+  background-color: #E6E6E6; /* Change to your preferred hover color */
+  margin-bottom: 0.5rem; /* 이미지와 텍스트 사이의 간격을 조정합니다 */
+
+}
+
+.nav-button1{
+  margin-right: 15px;
+}
+.nav-button1::before {
+  content: '';   /* 빈 내용으로 가상 요소 생성 */
+  display: block;/* 블록 레벨 요소로 설정 */
+  width: 32px;   /* 이미지 너비 설정 */
+  height: 32px;  /* 이미지 높이 설정 */
+  background: url('image/home.png') no-repeat center center; /* 이미지 적용 */
+  background-size: contain; /* 이미지 크기 조절 */
+  margin-bottom: 5px; /* 이미지와 텍스트 사이의 간격 */
+}
+.nav-button1:after {
+  content: "홈";  /* 텍스트 내용 */
+}
+
+.nav-button2{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.nav-button2::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url('image/card.png') no-repeat center center;
+  background-size: contain;
+  margin-bottom: 5px;
+}
+.nav-button2:after {
+  content: "명함첩";
+}
+
+.nav-button3{
+  margin-left: 15px;
+}
+.nav-button3::before {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  background: url('image/mypage.png') no-repeat center center;
+  background-size: contain;
+  margin-bottom: 5px;
+
+}
+.nav-button3:after {
+  content: "지갑관리";
+}
